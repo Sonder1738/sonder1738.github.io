@@ -18,6 +18,7 @@
             --text: #111111;
             --muted: #686655;
             --paper: #ffffff;
+            --font: "Segoe UI", Arial, sans-serif;
         }
 
         body {
@@ -25,7 +26,7 @@
             padding: 2px;
             background: #f2f2f2;
             color: var(--text);
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: var(--font);
             font-size: 14px;
             line-height: 1.42;
         }
@@ -128,21 +129,19 @@
         }
 
         .items li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding-left: 0;
+            position: relative;
+            padding-left: 18px;
             line-height: 1.5;
             margin-bottom: 2px;
         }
 
         .items li::before {
             content: "◆";
-            position: static;
-            flex-shrink: 0;
+            position: absolute;
+            left: 0;
+            top: 4px;
             font-size: 10px;
-            margin-top: 4px;
-            color: #323744;
+            color: var(--dark);
         }
 
         /* Work history */
@@ -234,10 +233,6 @@
 
             .section-heading {
                 margin-left: 0;
-            }
-
-            .items li {
-                padding-left: 23px;
             }
 
             .timeline-item {
@@ -350,13 +345,11 @@
 
         <!-- PROFESSIONAL SUMMARY -->
         <p class="summary">
-            Versatile programmer who loves automation with close to 7 years
-            of experience in DevOps/SRE ideology. Seeking to continually increase
-            my current knowledge bank and gain new insights on how different
-            companies operate within and the enterprise level tools they use.
-            Managed to slash deployment time by 60% with automation and cloud
-            syncing scripts. Fast learner who will never give up and get the
-            right answer.
+            Versatile programmer with a 
+            passion for automation and experience in DevOps/SRE practices since 2017. 
+            Always eager to expand my technical knowledge and gain new insights into how different companies 
+            operate and the enterprise-level tools they use. A fast learner with a persistent, problem-solving mindset 
+            and a commitment to finding the right solutions.
         </p>
 
         <!-- SKILLS -->
@@ -369,19 +362,16 @@
             </div>
 
             <ul class="items">
-                <li>Extensive knowledge in scripting languages such as Bash, PHP, Python, PowerShell</li>
-                <li>Familiar with CI/CD concepts in code sync across cloud servers via secure shell</li>
-                <li>Extensive knowledge on Unix-like server operations and management</li>
-                <li>Familiar with database engines such as MySQL and MariaDB</li>
-                <li>Excellent knowledge on Asterisk (open-source PBX system) and Vicidial source code level</li>
-                <li>Broad understanding of AppSec concepts; Bash injection prevention, SQL injection prevention</li>
-                <li>Knowledge in Terraform</li>
-                <li>Broad understanding in Azure VM, Azure Active Directory, Azure Automation, metrics monitoring, etc.</li>
-                <li>Experience in Zabbix monitoring tool</li>
-                <li>Experience with GitHub Workflows CI/CD</li>
-                <li>Experience with Kubernetes and Docker</li>
-                <li>Experience with ArgoCD and ArgoWorkflows</li>
-                <li>Knowledge with AWS services such as S3, EC2, RDS, CloudWatch, CloudTrail, IAM, VPC, etc.</li>
+                <li><strong>Scripting & Automation:</strong> Bash, Python, PHP, PowerShell</li>
+                <li><strong>CI/CD & Deployment:</strong> GitHub Actions, CI/CD pipelines, SSH-based deployment, automated code synchronization</li>
+                <li><strong>Cloud & Infrastructure as Code (IaC):</strong> Microsoft Azure, Azure VMs, Azure Automation, Terraform</li>
+                <li><strong>Containers & Orchestration:</strong> Kubernetes, Docker</li>
+                <li><strong>Linux/Unix Administration:</strong> Server management, system operations, troubleshooting, automation</li>
+                <li><strong>Monitoring & Observability:</strong> Zabbix, Azure Monitor, Grafana monitoring and alerting</li>
+                <li><strong>Databases:</strong> MongoDB, PostgreSQL, Redis, MariaDB, MySQL</li>
+                <li><strong>VoIP & Contact Center:</strong> Asterisk PBX, VICIdial source code analysis and customization</li>
+                <li><strong>Application Security:</strong> SQL injection prevention, Bash command injection prevention, secure scripting practices</li>
+                <li><strong>Identity & Access Management:</strong> Microsoft Entra ID (formerly Azure Active Directory), RBAC</li>
             </ul>
         </section>
 
@@ -395,17 +385,17 @@
             </div>
 
             <ul class="items">
-                <li>Wrote the API to integrate with IBM MQ from scratch</li>
-                <li>Successfully wrote the script to auto sync code across all private cloud clients hosted in AIMS data center</li>
-                <li>Wrote and programmed the entire IVR script alone in one of the top banks in Malaysia</li>
-                <li>Briefly worked on Digi project on VOIP calls reporting and monitoring</li>
-                <li>Worked on major project with HLB debt collection management software</li>
-                <li>Successfully installed, configured and tested 10 GSM Gateways</li>
-                <li>Successfully coded the system for employee management and card access in Stampede</li>
-                <li>Won AWS Jam competition held in previous company</li>
-                <li>Deployed Terraform solution for Deloitte’s cloud infrastructure from start to finish alone. Includes research, planning and proposal, testing, deployment, guidance.</li>
-                <li>Spearheaded SEA GitHub project from conception to implementation. Including writing CI/CD pipelines for Terraform from scratch</li>
-                <li>Successfully deployed Langfuse - an open-source AI engineering and observability platform from scratch</li>
+                <li>Independently delivered a Terraform-based cloud infrastructure solution for Deloitte, covering research, planning, proposal development, testing, deployment, and technical guidance.</li>
+                <li>Spearheaded the SEA GitHub project from conception to implementation, developing Terraform CI/CD pipelines from scratch to automate infrastructure deployment workflows.</li>
+                <li>Won the AWS Jam competition at a previous company, demonstrating practical cloud engineering skills and technical problem-solving capabilities.</li>
+                <li>Designed and implemented automated code synchronization scripts to streamline deployments across private cloud clients hosted at the AIMS data center.</li>
+                <li>Designed and developed APIs from scratch to integrate with IBM MQ.</li>
+                <li>Independently designed and developed the complete IVR system for a major Malaysian bank.</li>
+                <li>Contributed to a Digi project involving VoIP call reporting and monitoring.</li>
+                <li>Contributed to a major HLB debt collection management software project.</li>
+                <li>Installed, configured, and tested several GSM gateways, ensuring their operational readiness.</li>
+                <li>Developed an employee management and card access control system for Stampede.</li>
+                <li>Successfully deployed Langfuse - an open-source AI engineering and observability platform from scratch.</li>
             </ul>
         </section>
 
@@ -426,10 +416,13 @@
                     <p class="timeline-role">Senior Site Reliability Engineer</p>
                     <div class="timeline-company">Setel, Bangsar South</div>
                     <ul>
-                        <li>Regularly upgrade workloads including EKS, ArgoCD, ArgoWorkflows, MongoDB Atlas</li>
-                        <li>Deployed Istio Ambient into Production EKS Clusters</li>
-                        <li>Cut AWS cost savings by roughly 20% via structured cleanups and housekeeping</li>
-                        <li>Played a part in ensuring the SKPS and SKDS Fuel initiatives ran smoothly</li>
+                        <li>Upgrade and maintain EKS workloads, Argo CD, Argo Workflows, and MongoDB Atlas, etc.</li>
+                        <li>Deploy and maintain Istio Ambient in production EKS clusters.</li>
+                        <li>Perform AWS infrastructure housekeeping and resource cleanup to reduce costs by approximately 20%.</li>
+                        <li>Support the SKPS and SKDS Fuel initiatives to ensure smooth operations.</li>
+                        <li>Manage AWS cloud infrastructure and support operational reliability.</li>
+                        <li>Monitor infrastructure performance and troubleshoot operational issues.</li>
+                        <li>Automate repetitive operational tasks and improve deployment workflows.</li>
                     </ul>
                 </div>
             </article>
@@ -442,9 +435,10 @@
                     <p class="timeline-role">Senior DevOps Cloud Specialist</p>
                     <div class="timeline-company">Deloitte, Menara LGB</div>
                     <ul>
-                        <li>Deploy cloud solutions with Azure</li>
-                        <li>Streamline deployments and workflows with automation tools and scripts</li>
-                        <li>Complete overhaul of cloud infrastructure with Terraform and GitHub</li>
+                        <li>Deploy and manage Azure cloud infrastructure using Terraform.</li>
+                        <li>Develop Terraform CI/CD pipelines using GitHub.</li>
+                        <li>Automate infrastructure provisioning and deployment workflows.</li>
+                        <li>Plan, test, and deploy cloud infrastructure solutions.</li>
                     </ul>
                 </div>
             </article>
@@ -457,10 +451,10 @@
                     <p class="timeline-role">DevOps Support Engineer</p>
                     <div class="timeline-company">Grab, 1 First Avenue</div>
                     <ul>
-                        <li>Automation of Slackbot using Golang</li>
-                        <li>Manage permissions of GitLab</li>
-                        <li>Manage OneBank knowledgebase for stakeholders</li>
-                        <li>Work with the team to provide support for internal tools</li>
+                        <li>Develop and maintain Slackbot automation using Golang.</li>
+                        <li>Manage GitLab permissions and access controls.</li>
+                        <li>Maintain the OneBar knowledge base for stakeholders.</li>
+                        <li>Provide support for internal tools and troubleshoot issues.</li>
                     </ul>
                 </div>
             </article>
@@ -473,11 +467,16 @@
                     <p class="timeline-role">DevOps Engineer</p>
                     <div class="timeline-company">Stampede Solution, Bangsar South</div>
                     <ul>
-                        <li>Writing API in PHP and Python</li>
-                        <li>Maintain upkeep of cloud servers hosted in AIMS data center</li>
-                        <li>Continuous deployment of new API to all cloud client servers</li>
-                        <li>Automate manual labour with scripts (client installation and configuration)</li>
-                        <li>Manage GIT EE locally hosted servers</li>
+                        <li>Maintain cloud servers hosted at the AIMS data center.</li>
+                        <li>Manage code synchronization and deployments across private cloud clients.</li>
+                        <li>Develop and maintain APIs using Bash, PHP and Python.</li>
+                        <li>Automate client <abbr title="Private Branch Exchange">PBX</abbr> installation and configuration with scripts.</li>
+                        <li>Developed and maintain <abbr title="Interactive Voice Response">IVR</abbr> systems.</li>
+                        <li>Maintain Asterisk and VICIdial systems and source code.</li>
+                        <li>Support VoIP call reporting and monitoring systems.</li>
+                        <li>Maintain debt collection management backend APIs for banking and <abbr title="Debt Collection Agency">DCA</abbr> clients.</li>
+                        <li>Install, configure, and troubleshoot GSM gateways.</li>
+                        <li>Maintain employee management and card access control systems.</li>
                     </ul>
                 </div>
             </article>
@@ -490,9 +489,9 @@
                     <p class="timeline-role">Network Intern</p>
                     <div class="timeline-company">OpenSys, Petaling Jaya</div>
                     <ul>
-                        <li>Manage and install OS on VMware cloud computing technology</li>
-                        <li>Configure PUSPO notification settings such as warning alarms</li>
-                        <li>Collaborated on the company's Android application</li>
+                        <li>Installed and configured operating systems in VMware virtualized environments.</li>
+                        <li>Configured power supply unit (PSU) notification settings, including warning alarms.</li>
+                        <li>Collaborated on the development of the company's Android application.</li>
                     </ul>
                 </div>
             </article>
