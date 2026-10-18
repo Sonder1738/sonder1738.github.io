@@ -292,15 +292,7 @@
             }
 
             .section-heading {
-                break-inside: avoid;
-                page-break-inside: avoid;
                 break-after: avoid;
-                page-break-after: avoid;
-            }
-
-            .section-heading h2 {
-                break-after: avoid;
-                page-break-after: avoid;
             }
 
             .timeline-item {
@@ -318,20 +310,17 @@
             }
 
             .icon {
-                display: flex;
-                flex-shrink: 0;
-                align-items: center;
-                justify-content: center;
-                width: 29px;
-                height: 29px;
-                background: var(--dark);
-                color: white;
-                transform: rotate(45deg);
-                overflow: visible;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
             }
 
             a {
                 text-decoration: none;
+            }
+
+            .page-break-after {
+                break-after: page;
+                page-break-after: always;
             }
         }
     </style>
@@ -497,7 +486,7 @@
                 </div>
             </article>
 
-            <article class="timeline-item">
+            <article class="timeline-item page-break-after">
                 <div class="timeline-date">
                     30th November 2015 – 19th February 2016
                 </div>
