@@ -292,8 +292,8 @@
             }
 
             .section-heading {
-                display: flex;
-                align-items: center;
+                break-inside: avoid;
+                page-break-inside: avoid;
                 break-after: avoid;
                 page-break-after: avoid;
             }
@@ -318,14 +318,16 @@
             }
 
             .icon {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
+                display: flex;
                 flex-shrink: 0;
+                align-items: center;
+                justify-content: center;
                 width: 29px;
                 height: 29px;
+                background: var(--dark);
+                color: white;
                 transform: rotate(45deg);
-                break-inside: avoid;
-                page-break-inside: avoid;
+                overflow: visible;
             }
 
             a {
